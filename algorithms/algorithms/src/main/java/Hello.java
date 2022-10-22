@@ -1,4 +1,5 @@
 import Strings.duplications.*;
+import TwoPointer.CommonElements;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,5 +11,8 @@ public class Hello {
 
         String answer = "";
         System.out.println(answer);
+
+        CommonElements commonElements = new CommonElements();
+        commonElements.CommonElements();
     }
 }
