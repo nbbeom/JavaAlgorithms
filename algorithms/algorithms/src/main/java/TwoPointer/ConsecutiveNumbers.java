@@ -47,7 +47,7 @@ public class ConsecutiveNumbers {
         //수학적 방법
         n--;
         int cnt =0;
-        while(n>0){
+        while(n>0){ //break point
             cnt++;
             n= n-cnt;
             if(n%cnt == 0 ) ans ++;

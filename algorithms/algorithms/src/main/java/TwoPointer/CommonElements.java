@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class CommonElements {
 
-    public void CommonElements(){
+    public void Solution(){
 //        설명
 //        A, B 두 개의 집합이 주어지면 두 집합의 공통 원소를 추출하여 오름차순으로 출력하는 프로그램을 작성하세요.
 //        첫 번째 줄에 집합 A의 크기 N(1<=N<=30,000)이 주어집니다.
