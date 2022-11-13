@@ -1,5 +1,7 @@
+import HashMap.AllAnagram;
 import HashMap.Anagram;
 import HashMap.ClassPresident;
+import HashMap.SellRecord;
 import Strings.duplications.*;
 import TwoPointer.CommonElements;
 import TwoPointer.ConsecutiveNumbers;
@@ -29,8 +31,12 @@ public class Hello {
 //        ClassPresident cp = new ClassPresident();
 //        cp.ClassPresident();
 
-        Anagram anagram = new Anagram();
-        anagram.Anagram();
+//        Anagram anagram = new Anagram();
+//        anagram.Anagram();
 
+//        SellRecord sellRecord = new SellRecord();
+//        sellRecord.sellRecord();
+        AllAnagram allAnagram = new AllAnagram();
+        allAnagram.Anagram();
     }
 }
