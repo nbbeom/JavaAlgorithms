@@ -1,4 +1,5 @@
 import HashMap.*;
+import Stack.Stack01;
 import Strings.duplications.*;
 import TwoPointer.CommonElements;
 import TwoPointer.ConsecutiveNumbers;
@@ -35,7 +36,9 @@ public class Hello {
 //        sellRecord.sellRecord();
 //        AllAnagram allAnagram = new AllAnagram();
 //        allAnagram.Anagram();
-        KNumber kNumber = new KNumber();
-        kNumber.KNumber();
+//        KNumber kNumber = new KNumber();
+//        kNumber.KNumber();
+        Stack01 stack01 = new Stack01();
+        stack01.Stack01();
     }
 }
