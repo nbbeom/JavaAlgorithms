@@ -39,6 +39,7 @@ public class Hello {
 //        KNumber kNumber = new KNumber();
 //        kNumber.KNumber();
         Stack01 stack01 = new Stack01();
-        stack01.Stack01();
+//        stack01.Stack01();
+        stack01.Stack02();
     }
 }
