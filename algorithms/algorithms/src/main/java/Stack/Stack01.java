@@ -70,4 +70,46 @@ public class Stack01 {
 
 
     }
+
+    public void postFix() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        char[] a = br.readLine().toCharArray();
+
+        Stack<String> stack = new Stack<>();
+        int i = 0;
+        int j = 0;
+        for(char aa : a){
+            stack.push(String.valueOf(aa));
+            switch (aa){
+                case '*':
+                    stack.pop();
+                    j = Integer.parseInt(stack.pop());
+                    i = Integer.parseInt(stack.pop());
+                    stack.push(String.valueOf(i*j));
+                    break;
+                case '-':
+                    stack.pop();
+                    j = Integer.parseInt(stack.pop());
+                    i = Integer.parseInt(stack.pop());
+                    stack.push(String.valueOf(i-j));
+                    break;
+                case '+':
+                    stack.pop();
+                    j = Integer.parseInt(stack.pop());
+                    i = Integer.parseInt(stack.pop());
+                    stack.push(String.valueOf(i+j));
+                    break;
+                case '/':
+                    stack.pop();
+                    j = Integer.parseInt(stack.pop());
+                    i = Integer.parseInt(stack.pop());
+                    stack.push(String.valueOf(i/j));
+                    break;
+                default:
+                    break;
+            }
+        }
+        System.out.println(stack.pop());
+    }
 }
