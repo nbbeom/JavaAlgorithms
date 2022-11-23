@@ -112,4 +112,28 @@ public class Stack01 {
         }
         System.out.println(stack.pop());
     }
+
+    public void pipe() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        char[] a = br.readLine().toCharArray();
+        Stack<String> stack = new Stack<>();
+        int ans = 0;
+        for(int i= 0 ; i< a.length; i++){
+            stack.push(String.valueOf(a[i]));
+            if(String.valueOf(a[i]).equals(")")){
+                if( a[i-1] == '('){
+                    stack.pop();
+                    stack.pop();
+                    ans += stack.size();
+                }else{
+                    stack.pop();
+                    stack.pop();
+                    ans++;
+                }
+            }
+        }
+        System.out.println(ans);
+
+    }
 }
