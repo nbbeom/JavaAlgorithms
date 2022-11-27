@@ -46,7 +46,9 @@ public class Hello {
 //        stack01.pipe();
 
         Queue1 queue1 = new Queue1();
-        queue1.Queue1();
+//        queue1.Queue1();
+        queue1.Queue2();
     }
+
 
 }
