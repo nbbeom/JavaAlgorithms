@@ -1,4 +1,5 @@
 import HashMap.*;
+import Queue.Queue1;
 import Stack.Stack01;
 import Strings.duplications.*;
 import TwoPointer.CommonElements;
@@ -38,11 +39,14 @@ public class Hello {
 //        allAnagram.Anagram();
 //        KNumber kNumber = new KNumber();
 //        kNumber.KNumber();
-        Stack01 stack01 = new Stack01();
+//        Stack01 stack01 = new Stack01();
 //        stack01.Stack01();
 //        stack01.Stack02();
 //        stack01.postFix();
-        stack01.pipe();
+//        stack01.pipe();
+
+        Queue1 queue1 = new Queue1();
+        queue1.Queue1();
     }
 
 }
