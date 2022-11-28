@@ -47,8 +47,10 @@ public class Hello {
 
         Queue1 queue1 = new Queue1();
 //        queue1.Queue1();
-        queue1.Queue2();
+//        queue1.Queue2();
+        queue1.Queue3();
     }
+
 
 
 }

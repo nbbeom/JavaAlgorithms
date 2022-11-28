@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.temporal.ValueRange;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -78,5 +79,49 @@ public class Queue1 {
 
 
     }
+
+
+    public void Queue3() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] n = br.readLine().split(" ");
+        String[] k = br.readLine().split(" ");
+        Queue<Person> queue = new LinkedList();
+
+        for(int i= 0; i< Integer.parseInt(n[0]); i++){
+            queue.add(new Person(i,Integer.parseInt(k[i])));
+        }
+        int answer =1;
+        while(!queue.isEmpty()){
+            Person tmp = queue.poll();
+            for(Person x : queue){
+                if(x.priority > tmp.priority){
+                    queue.add(tmp);
+                    tmp = null;
+                    break;
+                }
+            }
+            if(tmp!= null){
+                if(tmp.id==Integer.parseInt(n[1])){
+                    System.out.println(answer);
+                    return;
+                }else{
+                    answer++;
+                }
+            }
+        }
+
+
+
+
+    }
+    class Person{
+        int id;
+        int priority;
+    public Person(int id, int priority){
+            this.id = id;
+            this.priority = priority;
+        }
+    }
+
 
 }
