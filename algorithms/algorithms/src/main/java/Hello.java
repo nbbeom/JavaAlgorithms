@@ -1,5 +1,6 @@
 import HashMap.*;
 import Queue.Queue1;
+import Sort.Sorts;
 import Stack.Stack01;
 import Strings.duplications.*;
 import TwoPointer.CommonElements;
@@ -45,10 +46,12 @@ public class Hello {
 //        stack01.postFix();
 //        stack01.pipe();
 
-        Queue1 queue1 = new Queue1();
+//        Queue1 queue1 = new Queue1();
 //        queue1.Queue1();
 //        queue1.Queue2();
-        queue1.Queue3();
+//        queue1.Queue3();
+        Sorts sorts = new Sorts();
+        sorts.SelectionSort();
     }
 
 
