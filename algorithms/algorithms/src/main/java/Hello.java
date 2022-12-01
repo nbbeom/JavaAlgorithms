@@ -51,8 +51,10 @@ public class Hello {
 //        queue1.Queue2();
 //        queue1.Queue3();
         Sorts sorts = new Sorts();
-        sorts.SelectionSort();
+//        sorts.SelectionSort();
+        sorts.BubbleSort();
     }
+
 
 
 

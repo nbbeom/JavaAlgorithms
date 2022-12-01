@@ -23,7 +23,6 @@ public class Sorts {
         for(int i = 0 ; i < n; i++){
             k[i] = Integer.parseInt(st.nextToken());
         }
-        int idx = 0;
         for(int i =0; i < n; i++){
             int tmp = 0;
             for(int j =i+1 ; j<n; j++){
@@ -43,4 +42,39 @@ public class Sorts {
         }
 
     }
+    public void BubbleSort() throws IOException {
+        //배열의 두수를 비교한다
+        // 두수가 정렬되었다면 놔두고 아니면 두수를 바꾼다
+        // 이를 처음부터 끝까지 반복한다.
+        //상당히 느리지만 코드가 단순해서 자주 사용된다.
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+        String s = br.readLine();
+        StringTokenizer st = new StringTokenizer(s);
+        int [] k = new int[n];
+
+        for(int i = 0 ; i < n; i++){
+            k[i] = Integer.parseInt(st.nextToken());
+        }
+
+        int temp = 0;
+        for(int i =0; i < n; i++){
+            for(int j =0; j <n-1; j++){
+                if(k[j] > k[j+1]){
+                    temp=  k[j] ;
+                    k[j] = k[j+1];
+                    k[j+1] =temp;
+                }
+            }
+
+        }
+
+        for(int x : k){
+            System.out.print(x + " ");
+        }
+
+    }
+
+
 }
