@@ -1,17 +1,6 @@
-import HashMap.*;
-import Queue.Queue1;
 import Sort.Sorts;
-import Stack.Stack01;
-import Strings.duplications.*;
-import TwoPointer.CommonElements;
-import TwoPointer.ConsecutiveNumbers;
-import TwoPointer.checkAccount;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
 
 public class Hello {
     public static void main(String[] args) throws IOException {

@@ -75,6 +75,35 @@ public class Sorts {
         }
 
     }
+    public void InsertionSort() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine());
+        String s = br.readLine();
+        StringTokenizer st = new StringTokenizer(s);
+        int [] k = new int[n];
+
+        for(int i = 0 ; i < n; i++){
+            k[i] = Integer.parseInt(st.nextToken());
+        }
+
+        for(int i =1; i < n ;i++){
+            int temp = k[i];
+            int j = 0;
+            for ( j = i-1; j>=0; j--){
+                if(k[j] > temp) {
+                    k[j + 1] = k[j];
+                }else{
+                    break;
+                }
+            }
+            k[j+1] =temp;
+        }
+        for( int i : k){
+            System.out.print(i + " ");
+        }
+
+    }
 
 
 }
