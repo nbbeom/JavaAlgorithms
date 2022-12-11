@@ -3,6 +3,7 @@ package Sort;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Sorts {
@@ -100,6 +101,43 @@ public class Sorts {
             k[j+1] =temp;
         }
         for( int i : k){
+            System.out.print(i + " ");
+        }
+
+    }
+
+    public void LRU() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        StringTokenizer st1 = new StringTokenizer(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st1.nextToken());
+        int k = Integer.parseInt(st1.nextToken());
+
+        int [] arr = new int[k];
+        int [] chache = new int[n];
+
+        for(int i = 0 ; i < k; i++){
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+
+        for(int x : arr){
+            int pos = -1;
+            for(int i = 0 ; i< n; i++) if( x == chache[i]) pos = i;
+            //missing
+            if(pos == -1){
+                for( int i = n-1; i >=1; i--){
+                    chache[i] = chache[i-1];
+                }
+            }else{//hit
+                for(int i = pos; i>=1 ; i--)
+                    chache[i] = chache[i-1];
+            }
+            chache[0] = x;
+        }
+
+
+        for( int i : chache){
             System.out.print(i + " ");
         }
 
