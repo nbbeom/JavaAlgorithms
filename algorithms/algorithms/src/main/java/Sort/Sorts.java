@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Sorts {
@@ -105,7 +106,6 @@ public class Sorts {
         }
 
     }
-
     public void LRU() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -143,5 +143,32 @@ public class Sorts {
 
     }
 
+    public void duplication() throws IOException{
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+            StringTokenizer st1 = new StringTokenizer(br.readLine());
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int n = Integer.parseInt(st1.nextToken());
+
+            int [] arr = new int[n];
+            ArrayList<Integer> arrayList = new ArrayList<>();
+
+
+            for(int i = 0 ; i < n; i++){
+                arr[i] = Integer.parseInt(st.nextToken());
+
+            }
+            Arrays.sort(arr);
+
+            for(int i= n-1; i>0;  i--){
+                if(arr[i] == arr[i-1]){
+                    System.out.println("D");
+                    return;
+                }
+            }
+            System.out.println("U");
+            return ;
+
+        }
 
 }

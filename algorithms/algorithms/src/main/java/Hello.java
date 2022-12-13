@@ -42,7 +42,8 @@ public class Hello {
         Sorts sorts = new Sorts();
 //        sorts.SelectionSort();
 //        sorts.BubbleSort();
-        sorts.LRU();
+//        sorts.LRU();
+        sorts.duplication();
 
     }
 
