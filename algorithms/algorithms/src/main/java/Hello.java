@@ -43,7 +43,8 @@ public class Hello {
 //        sorts.SelectionSort();
 //        sorts.BubbleSort();
 //        sorts.LRU();
-        sorts.duplication();
+//        sorts.duplication();
+        sorts.Joke();
 
     }
 

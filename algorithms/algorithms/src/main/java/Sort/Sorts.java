@@ -3,7 +3,6 @@ package Sort;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
@@ -151,7 +150,6 @@ public class Sorts {
             int n = Integer.parseInt(st1.nextToken());
 
             int [] arr = new int[n];
-            ArrayList<Integer> arrayList = new ArrayList<>();
 
 
             for(int i = 0 ; i < n; i++){
@@ -168,6 +166,30 @@ public class Sorts {
             }
             System.out.println("U");
             return ;
+
+        }
+    public void Joke() throws IOException{
+        //120 125 152 130 135 135 143 127 160
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            StringTokenizer st1 = new StringTokenizer(br.readLine());
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int n = Integer.parseInt(st1.nextToken());
+            int [] arr = new int[n];
+            int [] t = new int[n];
+
+         for(int i = 0 ; i < n; i++){
+                arr[i] = Integer.parseInt(st.nextToken());
+                t[i]= arr[i];
+            }
+
+
+            Arrays.sort(arr);
+
+            for(int j =0; j<n; j++){
+                if(arr[j] != t[j]){
+                    System.out.print(j+1+" ");
+                }
+            }
 
         }
 
