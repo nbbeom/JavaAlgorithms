@@ -3,7 +3,9 @@ package Sort;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Sorts {
@@ -193,4 +195,43 @@ public class Sorts {
 
         }
 
+    class Point implements Comparable<Point>{
+        public int x, y;
+        Point(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
+        @Override
+        public int compareTo(Point o) {
+            if(this.x ==o.x) return this.y-o.y;
+            return this.x - o.x ;
+        }
+    }
+
+    public void Xy() throws IOException{
+
+        //120 125 152 130 135 135 143 127 160
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            StringTokenizer st1 = new StringTokenizer(br.readLine());
+            int n = Integer.parseInt(st1.nextToken());
+
+            ArrayList<Point> arrs = new ArrayList<>();
+
+         for(int i = 0 ; i < n; i++){
+             StringTokenizer st = new StringTokenizer(br.readLine());
+             int x= Integer.parseInt(st.nextToken());
+              int y= Integer.parseInt(st.nextToken());
+              arrs.add(new Point(x,y));
+            }
+        Collections.sort(arrs);
+
+         for(Point o  : arrs){
+             System.out.println(o.x + " "+o.y);
+         }
+
+
+
+        }
+
 }
+

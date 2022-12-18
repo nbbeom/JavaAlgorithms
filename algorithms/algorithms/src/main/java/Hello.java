@@ -44,8 +44,8 @@ public class Hello {
 //        sorts.BubbleSort();
 //        sorts.LRU();
 //        sorts.duplication();
-        sorts.Joke();
-
+//        sorts.Joke();
+        sorts.Xy();
     }
 
 
