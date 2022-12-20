@@ -3,10 +3,8 @@ package Sort;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.StringTokenizer;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Sorts {
 
@@ -229,9 +227,41 @@ public class Sorts {
              System.out.println(o.x + " "+o.y);
          }
 
-
-
         }
+    public void BinarySearch() throws IOException {
+
+        //120 125 152 130 135 135 143 127 160
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st1 = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st1.nextToken());
+        int m = Integer.parseInt(st1.nextToken());
+
+        int [] arrs = new int[n];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        for (int i = 0; i < n; i++) {
+            arrs[i] = (Integer.parseInt(st.nextToken()));
+        }
+
+        Arrays.sort(arrs);
+
+        int lt = 0, rt = n;
+
+        for(int i = 0 ; i<n; i++){
+            int mid = (lt + rt) / 2;
+            if(arrs[mid] == m){
+                System.out.println(mid+1);
+                break;
+            } else if (arrs[mid] > m) {
+                rt = mid;
+            }else {
+                lt = mid;
+            }
+        }
+
+    }
+
 
 }
 

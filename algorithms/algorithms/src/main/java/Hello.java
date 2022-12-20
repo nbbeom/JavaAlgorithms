@@ -45,7 +45,8 @@ public class Hello {
 //        sorts.LRU();
 //        sorts.duplication();
 //        sorts.Joke();
-        sorts.Xy();
+//        sorts.Xy();
+        sorts.BinarySearch();
     }
 
 
