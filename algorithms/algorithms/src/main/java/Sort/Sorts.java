@@ -278,7 +278,6 @@ public class Sorts {
         for (int i = 0; i < n; i++) {
             arrs[i] = (Integer.parseInt(st.nextToken()));
         }
-        Arrays.sort(arrs);
 
         int temp = 0 , ans =0 ;
         lt= Arrays.stream(arrs).max().getAsInt();
