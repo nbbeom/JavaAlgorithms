@@ -46,7 +46,8 @@ public class Hello {
 //        sorts.duplication();
 //        sorts.Joke();
 //        sorts.Xy();
-        sorts.BinarySearch();
+//        sorts.BinarySearch();
+        sorts.MusicVideo();
     }
 
 

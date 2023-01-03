@@ -262,6 +262,48 @@ public class Sorts {
 
     }
 
+    public void MusicVideo() throws IOException
+    {
+
+        //120 125 152 130 135 135 143 127 160
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st1 = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st1.nextToken());
+        int m = Integer.parseInt(st1.nextToken());
+
+        int [] arrs = new int[n];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int lt = 0, rt = 0;
+        for (int i = 0; i < n; i++) {
+            arrs[i] = (Integer.parseInt(st.nextToken()));
+        }
+        Arrays.sort(arrs);
+
+        int temp = 0 , ans =0 ;
+        lt= Arrays.stream(arrs).max().getAsInt();
+        rt =Arrays.stream(arrs).sum();
+        while(lt<=rt){
+            int mid = (lt+rt)/2;
+            int cnt =1 ;
+            temp = 0;
+            for(int x : arrs){
+                if(temp+x > mid){
+                    cnt++;
+                    temp =x;
+                }  else temp+=x;
+            }
+            if(cnt <=m){
+                ans =mid;
+                rt = mid-1;
+            }else{
+                lt = mid+1;
+            }
+        }
+        System.out.println(ans);
+
+    }
+
 
 }
 
