@@ -1,3 +1,4 @@
+import DFSBFS.Recursion;
 import Sort.Sorts;
 
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class Hello {
 //        queue1.Queue1();
 //        queue1.Queue2();
 //        queue1.Queue3();
-        Sorts sorts = new Sorts();
+//        Sorts sorts = new Sorts();
 //        sorts.SelectionSort();
 //        sorts.BubbleSort();
 //        sorts.LRU();
@@ -47,7 +48,10 @@ public class Hello {
 //        sorts.Joke();
 //        sorts.Xy();
 //        sorts.BinarySearch();
-        sorts.MusicVideo();
+//        sorts.MusicVideo();
+
+        Recursion recursion = new Recursion();
+        recursion.DFS(3);
     }
 
 
