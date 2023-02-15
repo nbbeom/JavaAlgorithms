@@ -1,3 +1,4 @@
+import DFSBFS.Dfs;
 import DFSBFS.Recursion;
 import Sort.Sorts;
 
@@ -50,8 +51,10 @@ public class Hello {
 //        sorts.BinarySearch();
 //        sorts.MusicVideo();
 
-        Recursion recursion = new Recursion();
-        recursion.DFS(3);
+//        Recursion recursion = new Recursion();
+//        recursion.DFS(3);
+        Dfs SameSumSubset = new Dfs();
+        SameSumSubset.SameSumSubset();
     }
 
 
