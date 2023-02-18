@@ -58,4 +58,38 @@ public class Dfs {
         }
     }
 
+
+    int N = 0;
+    int C = 0;
+    int [] ans;
+    public void Dog() throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        C = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
+        ans = new int[N+1];
+        arr = new int[N];
+
+        for(int i = 0; i<N; i++){
+            arr[i] = Integer.parseInt(br.readLine());
+        }
+
+        dfs2(0,0);
+        System.out.println(answer);
+
+    }
+    int answer = 0;
+    public void dfs2(int l ,int w){
+        if(w >= C){
+            return;
+        } else if (l == N) {
+            answer = Math.max(answer,w);
+        } else {
+            dfs2(l+1,w + arr[l]);
+            dfs2(l+1, w);
+        }
+    }
+
+
 }

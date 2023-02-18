@@ -53,8 +53,10 @@ public class Hello {
 
 //        Recursion recursion = new Recursion();
 //        recursion.DFS(3);
-        Dfs SameSumSubset = new Dfs();
-        SameSumSubset.SameSumSubset();
+//        Dfs SameSumSubset = new Dfs();
+//        SameSumSubset.SameSumSubset();
+        Dfs dog = new Dfs();
+        dog.Dog();
     }
 
 
