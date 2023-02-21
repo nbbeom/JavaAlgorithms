@@ -56,7 +56,8 @@ public class Hello {
 //        Dfs SameSumSubset = new Dfs();
 //        SameSumSubset.SameSumSubset();
         Dfs dog = new Dfs();
-        dog.Dog();
+//        dog.Dog();
+        dog.MaximumScore();
     }
 
 

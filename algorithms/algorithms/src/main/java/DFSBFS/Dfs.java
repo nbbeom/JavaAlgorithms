@@ -91,5 +91,39 @@ public class Dfs {
         }
     }
 
+    int tt [];
+    int ts [];
+    int m;
+    public void MaximumScore() throws IOException{
+        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+        answer = 0;
+        ts = new int[n];
+        tt = new int[n];
+        for(int i = 0 ; i < n; i++){
+            st = new StringTokenizer(br.readLine());
+            ts[i] = Integer.parseInt(st.nextToken());
+            tt[i] = Integer.parseInt(st.nextToken());
+        }
+
+        dfs3(0,0,0);
+        System.out.println(answer);
+    }
+
+
+    public void dfs3 (int l , int ScoreSum , int TimeSum){
+        if(m < TimeSum){
+            return;
+        } else if (l == n) {
+            answer = Math.max(answer,ScoreSum);
+        }else{
+            dfs3(l+1 , ScoreSum + ts[l] , TimeSum + tt[l]);
+            dfs3(l+1 , ScoreSum , TimeSum);
+        }
+
+    }
+
 
 }
