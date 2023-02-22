@@ -3,6 +3,8 @@ package DFSBFS;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Dfs {
@@ -122,7 +124,34 @@ public class Dfs {
             dfs3(l+1 , ScoreSum + ts[l] , TimeSum + tt[l]);
             dfs3(l+1 , ScoreSum , TimeSum);
         }
+    }
 
+
+    public void PerbutationOfRepetition() throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+
+        arrs = new int[m];
+
+        porDfs(0);
+    }
+    int [] arrs;
+    public void porDfs(int l){
+        if (l == m) {
+            for(int i = 0; i < m; i++){
+                System.out.print(arrs[i]+ " ");
+            }
+            return;
+        } else{
+            int i = 0;
+            for (i =0 ; i < n; i++){
+                arrs[l] = i+1;
+                porDfs( l+1 );
+            }
+        }
     }
 
 

@@ -57,7 +57,8 @@ public class Hello {
 //        SameSumSubset.SameSumSubset();
         Dfs dog = new Dfs();
 //        dog.Dog();
-        dog.MaximumScore();
+//        dog.MaximumScore();
+        dog.PerbutationOfRepetition();
     }
 
 
