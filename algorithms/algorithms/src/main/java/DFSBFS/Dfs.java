@@ -3,6 +3,7 @@ package DFSBFS;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
@@ -136,8 +137,10 @@ public class Dfs {
 
         arrs = new int[m];
 
+        
         porDfs(0);
     }
+
     int [] arrs;
     public void porDfs(int l){
         if (l == m) {
@@ -153,6 +156,41 @@ public class Dfs {
             }
         }
     }
+    int [] coins ;
+    int cnt;
+    public void coinChange() throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        n = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        coins = new int[n];
+        cnt = 0;
+        for(int i = 0; i < n; i++){
+            coins[i] = Integer.parseInt(st.nextToken());
+        }
+
+        m = Integer.parseInt(br.readLine());
+
+        coinDfs(0,0);
+        System.out.println(answer);
+    }
+
+    public void coinDfs(int l , int sum){
+        if (sum > m ) {
+            return;
+        } else if (sum == m) {
+            if(answer == 0){
+                answer = l;
+            }
+            answer =  Math.min(answer, l);
+        } else{
+            int i = 0;
+            for (i =0 ; i < n; i++){
+                cnt ++;
+                coinDfs( l+1 ,sum+ coins[i]);
+            }
+        }
+    }
 
 }

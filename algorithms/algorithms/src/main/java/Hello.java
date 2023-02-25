@@ -58,8 +58,11 @@ public class Hello {
         Dfs dog = new Dfs();
 //        dog.Dog();
 //        dog.MaximumScore();
-        dog.PerbutationOfRepetition();
+//        dog.PerbutationOfRepetition();
+        dog.coinChange();
+
     }
+
 
 
 
