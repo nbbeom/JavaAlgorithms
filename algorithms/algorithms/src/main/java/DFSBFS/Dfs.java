@@ -193,4 +193,26 @@ public class Dfs {
         }
     }
 
+    int r = 0;
+    static int [][] com;
+    public void combination() throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(st.nextToken());
+        r = Integer.parseInt(st.nextToken());
+
+        com = new int[n+1][r+1];
+        ;
+        System.out.println(combinationDfs(n,r));
+    }
+    public static int combinationDfs(int n,int r) {
+        if(com[n][r]>0){
+            return com[n][r];
+        }
+        if(n==r || r ==0) return com[n][r] = 1;
+        else return com[n][r] = combinationDfs(n-1,r-1) + combinationDfs(n-1,r);
+    }
+
+
 }
