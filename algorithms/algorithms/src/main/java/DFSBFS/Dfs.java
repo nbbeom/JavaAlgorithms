@@ -240,4 +240,54 @@ public class Dfs {
     }
 
 
+    static int [] b ;
+    static int [] p  ;
+    static int finalNum;
+    static boolean flag;
+    public void combination3() throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(st.nextToken());
+        finalNum = Integer.parseInt(st.nextToken());
+
+        b = new int[n];
+        p = new int[m];
+        com = new int[n+1][n+1];
+        ch = new int[n+1];
+
+        for(int i = 0 ; i < n; i++){
+           b[i] = combinationDfss(n-1,i);
+        }
+        combinationDfs3(0,0);
+    }
+    public static int combinationDfss(int n,int r) {
+        if(com[n][r]>0){
+            return com[n][r];
+        }
+        if(n==r || r ==0) return com[n][r] = 1;
+        else return com[n][r] = combinationDfss(n-1,r-1) + combinationDfss(n-1,r);
+    }
+
+    public static void combinationDfs3(int l,int sum) {
+        if(flag)return;
+        if(l == n){
+            if(sum == finalNum){
+                for(int x : p) System.out.print(x +" ");
+                flag = true;
+            }
+        }else{
+            for (int i = 1; i< n; i++){
+                if(ch[i] == 0) {
+                    ch[i] = 1;
+                    p[l] = i;
+                    combinationDfs3(l + 1, (p[l]*b[l])+sum);
+                    ch[i] = 0;
+                }
+            }
+        }
+
+    }
+
+
 }
