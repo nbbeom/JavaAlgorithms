@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.Buffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Dfs {
     static int n;
@@ -329,4 +327,69 @@ public class Dfs {
 
         }
     }
+
+    static int mm ;
+    static int nn;
+    static int [][]dis;
+    static Queue<Point> Q = new LinkedList<>();
+    public void tomato() throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer s = new StringTokenizer(br.readLine());
+        nn = Integer.parseInt(s.nextToken());
+        mm = Integer.parseInt(s.nextToken());
+        miro = new int[mm][nn];
+        dis= new int[mm][nn];
+        answer = 0;
+        for(int i =0; i <mm; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < nn; j++){
+                dis[i][j] =0;
+                miro[i][j] = Integer.parseInt(st.nextToken());
+                if(miro[i][j] == 1) Q.offer(new Point(i,j));
+            }
+        }
+
+        miro[0][0] = 1;
+        tomatoDfs(0,0);
+        boolean flag = true;
+        for(int i =0; i<n; i++){
+            for (int j=0 ; j<n; j++){
+                if(miro[i][j] ==0) flag =false;
+            }
+        }
+        answer = 0;
+        if(flag){
+            for(int i =0; i<n; i++){
+                for (int j=0 ; j<n; j++){
+                answer = Math.max(answer, dis[i][j]);
+                }
+            }
+            System.out.println(answer);
+        }else System.out.println("-1");
+
+    }
+
+
+    public void tomatoDfs(int x, int y){
+        while(!Q.isEmpty()){
+            Point tmp = Q.poll();
+            for(int i =0; i< 4 ; i++){
+                int nx =tmp.x + dx[i];
+                int ny =tmp.y + dy[i];
+                if(nx>=0 && nx<nn &&ny>=0 && ny<nn && miro[nx][ny] == 0){
+                    miro[nx][ny] = 1;
+                    Q.offer(new Point(nx,ny));
+                    dis[nx][ny] = dis[tmp.x][tmp.y] + 1;
+                }
+            }
+        }
+    }
+    class Point{
+        int x, y;
+        Point(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
+    }
+
 }
