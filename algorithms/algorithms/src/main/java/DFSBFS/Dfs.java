@@ -82,7 +82,7 @@ public class Dfs {
         System.out.println(answer);
 
     }
-    int answer = 0;
+    static int answer = 0;
     public void dfs2(int l ,int w){
         if(w >= C){
             return;
@@ -290,4 +290,43 @@ public class Dfs {
     }
 
 
+    static int [][] miro ;
+    static int[] dx ={-1,0,1,0};
+    static int[] dy ={0,1,0,-1};
+    public void miro() throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        miro = new int[7][7];
+        answer = 0;
+        for(int i =0; i <7; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < 7; j++){
+                miro[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        miro[0][0] = 1;
+        mirodfs(0,0);
+        System.out.println(answer);
+
+    }
+
+
+    public static void mirodfs(int x , int y){
+        if(x == 6 && y ==6){
+            answer ++;
+        }else {
+            for(int i =0 ; i < 4; i++){
+                int nx = dx[i] + x;
+                int ny = dy[i] + y;
+                if(nx >= 0 && nx<=6 && ny >=0 &&ny <=6 && miro[nx][ny] == 0){
+                    miro[nx][ny] = 1;
+                    mirodfs(nx,ny);
+                    miro[nx][ny] = 0;
+                }
+
+            }
+
+        }
+    }
 }

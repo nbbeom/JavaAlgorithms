@@ -60,8 +60,8 @@ public class Hello {
 //        dog.MaximumScore();
 //        dog.PerbutationOfRepetition();
 //        dog.coinChange();
-        dog.combination();
-
+//        dog.combination();
+        dog.miro();
     }
 
 
