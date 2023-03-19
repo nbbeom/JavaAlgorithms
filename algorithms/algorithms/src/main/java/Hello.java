@@ -61,8 +61,10 @@ public class Hello {
 //        dog.PerbutationOfRepetition();
 //        dog.coinChange();
 //        dog.combination();
-        dog.miro();
+//        dog.miro();
+        dog.island();
     }
+
 
 
 

@@ -392,4 +392,51 @@ public class Dfs {
         }
     }
 
+    public void island() throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer s = new StringTokenizer(br.readLine());
+        nn = Integer.parseInt(s.nextToken());
+        miro = new int[nn][nn];
+        answer = 0;
+        for(int i =0; i <nn; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < nn; j++){
+                miro[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        for(int i =0; i <nn; i++){
+            for (int j = 0; j < nn; j++){
+                if(miro[i][j] == 1){
+                    answer ++;
+                    miro[i][j] = 0;
+                    System.out.println(i +" "+ j);
+                    islandDfs(i,j);
+                    System.out.println("-----------------------------------");
+                }
+            }
+        }
+        System.out.println(answer);
+
+    }
+    static int[] dx2 ={-1,-1,0,1,1,1,0,-1};
+    static int[] dy2 ={0,1,1,1,0,-1,-1,-1};
+    public static void islandDfs(int x, int y){
+        for (int i = 0; i < dx2.length; i++){
+            int nx = x + dx2[i];
+            int ny = y + dy2[i];
+
+            if(nx >= 0 && nx < nn && ny >= 0 && ny < nn ){
+                if(miro[nx][ny] == 1){
+                    miro[nx][ny] = 0;
+                    System.out.println(nx+" "+ny);
+                    islandDfs(nx,ny);
+                }
+
+            }
+
+        }
+
+
+    }
 }
