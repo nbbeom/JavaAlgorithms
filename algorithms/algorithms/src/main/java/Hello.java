@@ -1,5 +1,6 @@
 import DFSBFS.Dfs;
 import DFSBFS.Recursion;
+import Greedy.Greedy;
 import Sort.Sorts;
 
 import java.io.IOException;
@@ -55,14 +56,17 @@ public class Hello {
 //        recursion.DFS(3);
 //        Dfs SameSumSubset = new Dfs();
 //        SameSumSubset.SameSumSubset();
-        Dfs dog = new Dfs();
+//        Dfs dog = new Dfs();
 //        dog.Dog();
 //        dog.MaximumScore();
 //        dog.PerbutationOfRepetition();
 //        dog.coinChange();
 //        dog.combination();
 //        dog.miro();
-        dog.island();
+//        dog.island();
+
+        Greedy greedy = new Greedy();
+        greedy.Greedy1();
     }
 
 
