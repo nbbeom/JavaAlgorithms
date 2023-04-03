@@ -66,8 +66,11 @@ public class Hello {
 //        dog.island();
 
         Greedy greedy = new Greedy();
-        greedy.Greedy1();
+//        greedy.Greedy1();
+//        greedy.Wedding();
+        greedy.PQ();
     }
+
 
 
 
